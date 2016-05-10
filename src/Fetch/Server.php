@@ -512,4 +512,14 @@ class Server
      {
          return imap_deletemailbox($this->getImapStream(), $this->getServerSpecification() . $mailbox);
      }
+
+    /**
+     * Closes the current connection
+     *
+     * @return bool
+     */
+     public function closeConnection() 
+     {
+        return imap_close($this->getImapStream());
+     }
 }
